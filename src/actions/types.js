@@ -1,0 +1,3 @@
+export const FETCH_PHOTOS = "FETCH_PHOTOS";
+export const PAGINATE_PHOTOS = "PAGINATE_PHOTOS";
+export const GET_PAGE_PHOTOS = "GET_PAGE_PHOTOS";

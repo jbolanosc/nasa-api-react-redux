@@ -1,13 +1,180 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  background-color: #01070a;
+}
+
+/* Landing Section */
+
+.heading {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 3%;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #01070a;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.scene .rocket {
+  position: relative;
+  animation: animate 0.2s ease infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-2px);
+  }
+  50% {
+    transform: translate(2px);
+  }
+}
+
+.rocket::before {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 10px;
+  height: 200px;
+  background: linear-gradient(#00deff, transparent);
+}
+
+.rocket::after {
+  content: "";
+  position: absolute;
+  bottom: -200px;
+  left: 50%;
+  transform: translate(-50%);
+  width: 10px;
+  height: 200px;
+  background: linear-gradient(#00deff, transparent);
+  filter: blur(20px);
+}
+
+/* Photos Section */
+.card-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.card-container .card {
+  position: relative;
+  width: 30%;
+  height: 40%;
+}
+
+.card-container .card .face {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.card-container .card .face.face1 {
+  background: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-container .card .face.face1 img {
+  max-width: 100%;
+}
+
+.card-container .card .face.face2 h3 {
+  color: rgb(186, 30, 104);
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+.card-container .card:hover .face.face1 {
+  transform: translateY(-100px) rotateX(90deg);
+}
+
+.card-container .card .face.face2 {
+  background: rgb(86, 67, 253);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  transform-origin: top;
+  transform: translateY(100px) rotateX(90deg);
+}
+
+.card-container .card:hover .face.face2 {
+  transform: translateY(0%) rotateX(0deg);
+}
+
+.face2 .content {
+  background: rgb(86, 67, 253);
+}
+
+.main {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #01070a;
+}
+
+/* Pagination  */
+
+.pagination {
+  margin: 15px auto;
+  display: flex;
+  list-style: none;
+  outline: none;
+  justify-content: center;
+  background-color: #01070a;
+}
+.pagination > .active > a {
+  background-color: #47ccde;
+  border-color: #47ccde;
+  color: #fff;
+}
+.pagination > li > a {
+  border: 1px solid #47ccde;
+  padding: 5px 10px;
+  outline: none;
+  cursor: pointer;
+}
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  background-color: #47ccde;
+  border-color: #47ccde;
+  outline: none;
+}
+.pagination > li > a,
+.pagination > li > span {
+  color: #47ccde;
+}
+.pagination > li:first-child > a,
+.pagination > li:first-child > span,
+.pagination > li:last-child > a,
+.pagination > li:last-child > span {
+  border-radius: unset;
 }
